@@ -819,8 +819,13 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     # Stage 3/3: Make changes.
     script.Comment("Stage 3/3")
 
-  # Dump fingerprints
-  script.Print("Target: {}".format(target_info.fingerprint))
+  android_version = target_info.GetBuildProp("ro.build.version.release")
+  build_id = target_info.GetBuildProp("ro.build.id")
+  build_date = target_info.GetBuildProp("org.cuzpixel.build_date")
+  security_patch = target_info.GetBuildProp("ro.build.version.security_patch")
+  device = target_info.GetBuildProp("org.cuzpixel.device")
+  script.PrintCuzPixelBanner(android_version, build_id, build_date,
+                                  security_patch, device)
 
   device_specific.FullOTA_InstallBegin()
 
