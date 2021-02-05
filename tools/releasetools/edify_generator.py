@@ -283,6 +283,11 @@ class EdifyGenerator(object):
   def PrintCuzPixelBanner(self, android_version, build_id, build_date,
                                   security_patch, device):
     self.Print("----------------------------------------------")
+    self.Print("                    _             ")
+    self.Print("          _     _  |_) o     _  | ")
+    self.Print("         (_ |_| /_ |   | >< (/_ | ")
+    self.Print("                                  ")
+    self.Print("----------------------------------------------")
     self.Print(" Android version: %s"%(android_version))
     self.Print(" Build id: %s"%(build_id))
     self.Print(" Build date: %s"%(build_date))
